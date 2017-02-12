@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Grade;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -49,6 +50,11 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'first_name' => 'required|max:255',
+            'last_name' => 'required|max:255',
+            'grade' => 'required|max:255',
+            'identification_document' => 'nullable',
+            'telephone' => 'nullable',
+            'address' => 'nullable',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
         ]);
@@ -63,9 +69,22 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
+            'active' => 1,
+            'role' => 'USER',
             'first_name' => $data['first_name'],
+            'last_name' => $data['last_name'],
+            'grade' => $data['grade'],
+            'identification_document' => $data['identification_document'],
+            'telephone' => $data['telephone'],
+            'address' => $data['address'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    public function showRegistrationForm()
+    {
+        $grades = Grade::all();
+        return view('auth.register')->with('grades', $grades);
     }
 }
