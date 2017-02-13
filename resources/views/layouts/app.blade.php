@@ -43,7 +43,10 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        @inject('menu', 'App\Http\Controllers\MenuController')
+                        @foreach($menu->grades() as $grade)
+                            <li><a href="{{ route('searchArticlesByGrade', ['grade' => $grade->title]) }}">{{ $grade->title }}</a></li>
+                        @endforeach
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -55,11 +58,12 @@
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{ Auth::user()->first_name }} <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
+                                        <a href="{{ url('/') }}">My Articles</a>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

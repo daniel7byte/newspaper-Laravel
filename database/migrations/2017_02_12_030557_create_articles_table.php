@@ -19,8 +19,8 @@ class CreateArticlesTable extends Migration
             $table->text('description')->nullable();
             $table->text('image')->nullable();
             $table->integer('user_id')->index();
-            $table->integer('category_id')->index();
-            $table->integer('grade_id')->index();
+            $table->string('category_ref')->nullable();
+            $table->string('grade_ref')->nullable();
             $table->timestamps();
         });
     }
