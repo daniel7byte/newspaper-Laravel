@@ -42,7 +42,7 @@ class AccountController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $id)
+    public function update(Request $request)
     {
         $this->validate($request, [
             'first_name' => 'required|max:255',
@@ -53,7 +53,7 @@ class AccountController extends Controller
             'address' => 'nullable',
         ]);
 
-        $user = User::find($id);
+        $user = User::find(Auth::user()->id);
 
         $user->first_name = $request->first_name;
         $user->last_name = $request->last_name;

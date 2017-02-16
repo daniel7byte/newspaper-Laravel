@@ -35,7 +35,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
     })->name('dashboard');
 
     Route::get('my_account', 'AccountController@index')->name('my_account');
-    Route::post('my_account/{id}', 'AccountController@update')->name('my_account_update');
+    Route::post('my_account', 'AccountController@update')->name('my_account_update');
 
     Route::resource('users', 'UserController');
 

@@ -10,7 +10,7 @@
                     <div class="panel-heading">{{ $user->first_name }}</div>
 
                     <div class="panel-body">
-                        <form class="form-horizontal" role="form" method="POST" action="{{ route('my_account_update', ['user' => $user]) }}" enctype="multipart/form-data">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ route('my_account_update') }}" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
                             <div class="form-group">
