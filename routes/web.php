@@ -20,21 +20,29 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'search'], function () {
+
+    Route::get('/', 'SearchController@articlesByString')->name('searchArticlesByString');
+
     Route::get('user/{user}', 'SearchController@articlesByUser')->name('searchArticlesByUser');
     Route::get('category/{category}', 'SearchController@articlesByCategory')->name('searchArticlesByCategory');
     Route::get('grade/{grade}', 'SearchController@articlesByGrade')->name('searchArticlesByGrade');
-    Route::get('/', 'SearchController@articlesByString')->name('searchArticlesByString');
 });
 
 Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
-    Route::resource('users', 'UserController');
-    Route::resource('categories', 'CategoryController');
-    Route::resource('grades', 'GradeController');
-    Route::resource('articles', 'ArticleController');
-    Route::resource('commentaries', 'CommentaryController');
-    Route::resource('internal_comments', 'InternalCommentController');
-    Route::resource('my_account', 'AccountController');
+
     Route::get('/', function () {
         return redirect(route('searchArticlesByUser', ['user' => Auth::id()]));
     })->name('dashboard');
+
+    Route::get('my_account', 'AccountController@index')->name('my_account');
+    Route::post('my_account/{id}', 'AccountController@update')->name('my_account_update');
+
+    Route::resource('users', 'UserController');
+
+    Route::resource('categories', 'CategoryController');
+    Route::resource('grades', 'GradeController');
+
+    Route::resource('articles', 'ArticleController');
+    Route::resource('commentaries', 'CommentaryController');
+    Route::resource('internal_comments', 'InternalCommentController');
 });

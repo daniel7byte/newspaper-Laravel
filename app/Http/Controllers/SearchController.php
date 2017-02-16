@@ -33,7 +33,7 @@ class SearchController extends Controller
     public function articlesByCategory($category){
         $articles = Article::where('category_ref', 'LIKE', '%'.$category.'%')->paginate(2);
         $category = Category::where('title', 'LIKE', '%'.$category.'%')->first();
-        return view('search.articlesByGrade', ['articles' => $articles, 'category' => $category]);
+        return view('search.articlesByCategory', ['articles' => $articles, 'category' => $category]);
     }
 
     public function articlesByGrade($grade){

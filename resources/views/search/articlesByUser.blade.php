@@ -9,7 +9,8 @@
 
                 <div class="panel-body">
                     @foreach ($articles as $article)
-                        {{ $article->title }}
+                        {{ $article->title }} |
+                        {{ $article->user->first_name}}
                     @endforeach
 
                     {{ $articles->links() }}

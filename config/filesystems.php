@@ -48,6 +48,26 @@ return [
             'root' => storage_path('app'),
         ],
 
+        'imagesUsers' => [
+            'driver' => 'local',
+            'root' => public_path().'/imagesUsers',
+        ],
+
+        'imagesCategories' => [
+            'driver' => 'local',
+            'root' => public_path().'/imagesCategories',
+        ],
+
+        'imagesGrades' => [
+            'driver' => 'local',
+            'root' => public_path().'/imagesGrades',
+        ],
+
+        'imagesArticles' => [
+            'driver' => 'local',
+            'root' => public_path().'/imagesArticles',
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
