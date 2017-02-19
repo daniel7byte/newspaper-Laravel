@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Grade;
+use App\Institution;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,7 +21,8 @@ class AccountController extends Controller
     {
         $user = Auth::user();
         $grades = Grade::all();
-        return view('my_account.index', ['user' => $user, 'grades' => $grades]);
+        $institutions = Institution::all();
+        return view('my_account.index', ['user' => $user, 'grades' => $grades, 'institutions' => $institutions]);
     }
 
     /**

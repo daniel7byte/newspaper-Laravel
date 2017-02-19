@@ -19,9 +19,11 @@ class CreateArticlesTable extends Migration
             $table->text('description')->nullable();
             $table->text('image')->nullable();
             $table->date('date')->nullable();
+            $table->boolean('active');
             $table->integer('user_id')->index();
             $table->string('category_ref')->nullable();
             $table->string('grade_ref')->nullable();
+            $table->string('institution_ref')->nullable();
             $table->timestamps();
         });
     }

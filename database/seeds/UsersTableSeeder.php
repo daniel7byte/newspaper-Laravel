@@ -18,6 +18,7 @@ class UsersTableSeeder extends Seeder
             'active' => 1,
             'role' => 'ADMIN',
             'grade' => 'Decimo',
+            'institution_ref' => 'Central',
             'image' => NULL,
             'identification_document' => 1193373386,
             'telephone' => 3194995422,

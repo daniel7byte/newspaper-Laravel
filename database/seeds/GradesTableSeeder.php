@@ -12,7 +12,7 @@ class GradesTableSeeder extends Seeder
      */
     public function run()
     {
-        $titles = ['Kinder', 'Primero', 'Segundo', 'Tercero', 'Cuarto', 'Quinto', 'Sexto', 'Septimo', 'Octavo', 'Noveno', 'Decimo', 'Onceavo'];
+        $titles = ['Kinder', 'Primero', 'Segundo', 'Tercero', 'Cuarto', 'Quinto', 'Sexto', 'Septimo', 'Octavo', 'Noveno', 'Decimo', 'Onceavo', 'Directivos'];
 
         foreach ($titles as $key => $value) {
 

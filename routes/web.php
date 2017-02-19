@@ -28,6 +28,8 @@ Route::group(['prefix' => 'search'], function () {
     Route::get('grade/{grade}', 'SearchController@articlesByGrade')->name('searchArticlesByGrade');
 });
 
+Route::get('article/{article}', 'DetailController@detailsArticle')->name('detailsArticle');
+
 Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
 
     Route::get('/', function () {

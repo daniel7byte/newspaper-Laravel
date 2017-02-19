@@ -25,7 +25,7 @@ class SearchController extends Controller
     }
 
     public function articlesByUser($user){
-        $articles = Article::where('user_id', '=', $user)->paginate(2);
+        $articles = Article::where('user_id', '=', $user)->orderBy('created_at', 'desc')->paginate(2);
         $user = User::where('id', $user)->first();
         return view('search.articlesByUser', ['articles' => $articles, 'user' => $user]);
     }

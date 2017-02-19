@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->boolean('active');
             $table->enum('role', ['ADMIN', 'USER']);
             $table->string('grade');
+            $table->string('institution_ref')->nullable();
             $table->text('image')->nullable();
             $table->bigInteger('identification_document')->nullable();
             $table->bigInteger('telephone')->nullable();

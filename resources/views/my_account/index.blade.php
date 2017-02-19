@@ -1,7 +1,7 @@
 @extends('../layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 @include('alerts.success')
@@ -71,6 +71,28 @@
                                 </div>
                             </div>
 
+                            <div class="form-group{{ $errors->has('institution_ref') ? ' has-error' : '' }}">
+                                <label for="institution_ref" class="col-md-4 control-label">Institution</label>
+
+                                <div class="col-md-6">
+                                    <select class="form-control" id="institution_ref" name="institution_ref" required>
+                                        @foreach( $institutions as $institution)
+                                            @if($institution->title == $user->institution_ref or old('institution_ref'))
+                                                <option value="{{ $institution->title }}" selected>{{ $institution->title }}</option>
+                                            @else
+                                                <option value="{{ $institution->title }}">{{ $institution->title }}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
+
+                                    @if ($errors->has('institution_ref'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('institution_ref') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
                             <div class="form-group{{ $errors->has('identification_document') ? ' has-error' : '' }}">
                                 <label for="identification_document" class="col-md-4 control-label">Identification Document</label>
 
@@ -116,7 +138,7 @@
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
                                     <button type="submit" class="btn btn-primary">
-                                        Update
+                                        <span class="fa fa-pencil" aria-hidden="true"></span> Update
                                     </button>
                                 </div>
                             </div>

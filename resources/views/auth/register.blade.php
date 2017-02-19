@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -55,6 +55,28 @@
                                 @if ($errors->has('grade'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('grade') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('institution_ref') ? ' has-error' : '' }}">
+                            <label for="institution_ref" class="col-md-4 control-label">Institution</label>
+
+                            <div class="col-md-6">
+                                <select class="form-control" id="institution_ref" name="institution_ref" required>
+                                    @foreach( $institutions as $institution )
+                                        @if($institution->title == old('institution_ref'))
+                                            <option value="{{ $institution->title }}" selected>{{ $institution->title }}</option>
+                                        @else
+                                            <option value="{{ $institution->title }}">{{ $institution->title }}</option>
+                                        @endif
+                                    @endforeach
+                                </select>
+
+                                @if ($errors->has('institution_ref'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('institution_ref') }}</strong>
                                     </span>
                                 @endif
                             </div>

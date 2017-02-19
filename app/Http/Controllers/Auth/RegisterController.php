@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Grade;
+use App\Institution;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -74,6 +75,7 @@ class RegisterController extends Controller
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
             'grade' => $data['grade'],
+            'institution_ref' => $data['institution_ref'],
             'identification_document' => $data['identification_document'],
             'telephone' => $data['telephone'],
             'address' => $data['address'],
@@ -85,6 +87,7 @@ class RegisterController extends Controller
     public function showRegistrationForm()
     {
         $grades = Grade::all();
-        return view('auth.register')->with('grades', $grades);
+        $institutions = Institution::all();
+        return view('auth.register', ['grades' => $grades, 'institutions' => $institutions]);
     }
 }

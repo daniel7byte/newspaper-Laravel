@@ -13,6 +13,9 @@
     <!-- Styles -->
     <link href="/css/flatly.min.css" rel="stylesheet">
     <link href="/css/customized.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+
+    @yield('head')
 
     <!-- Scripts -->
     <script>
@@ -70,9 +73,11 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{{ route('my_account') }}">My Account</a></li>
+                                    <li><a href="{{ route('searchArticlesByUser', ['user' => Auth::user()->id]) }}">My Articles</a></li>
+                                    <li><a href="{{ route('internal_comments.create') }}">Internal Comments</a></li>
+                                    <li role="separator" class="divider"></li>
                                     <li>
-                                        <a href="{{ route('my_account') }}">My Account</a>
-                                        <a href="{{ route('searchArticlesByUser', ['user' => Auth::id()]) }}">My Articles</a>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -96,5 +101,6 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    @yield('footer')
 </body>
 </html>
