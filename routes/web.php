@@ -19,6 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('error404', 'SearchController@error404')->name('error404');
+
 Route::group(['prefix' => 'search'], function () {
 
     Route::get('/', 'SearchController@articlesByString')->name('searchArticlesByString');
@@ -26,6 +28,7 @@ Route::group(['prefix' => 'search'], function () {
     Route::get('user/{user}', 'SearchController@articlesByUser')->name('searchArticlesByUser');
     Route::get('category/{category}', 'SearchController@articlesByCategory')->name('searchArticlesByCategory');
     Route::get('grade/{grade}', 'SearchController@articlesByGrade')->name('searchArticlesByGrade');
+    Route::get('institution/{institution}', 'SearchController@articlesByInstitution')->name('searchArticlesByInstitution');
 });
 
 Route::get('article/{article}', 'DetailController@detailsArticle')->name('detailsArticle');
@@ -47,4 +50,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
     Route::resource('articles', 'ArticleController');
     Route::resource('commentaries', 'CommentaryController');
     Route::resource('internal_comments', 'InternalCommentController');
+
+    Route::get('articlesFormStatus', 'DashboardController@articlesFormStatus')->name('articlesFormStatus');
+    Route::post('articlesChangeStatus/{article}', 'DashboardController@articlesChangeStatus')->name('articlesChangeStatus');
 });

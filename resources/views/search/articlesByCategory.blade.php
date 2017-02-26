@@ -8,12 +8,24 @@
                 <div class="panel-heading">Articles by {{ $category->title }}</div>
 
                 <div class="panel-body">
-                    @foreach ($articles as $article)
-                        {{ $article->title }}
-                    @endforeach
-
-                    {{ $articles->links() }}
+                    <div class="row">
+                        @foreach ($articles as $article)
+                            @if($article->active == true)
+                                @include('search.articleCard')
+                            @else
+                                @if(Auth::check())
+                                    @if($article->user->id === Auth::user()->id or Auth::user()->role == "ADMIN")
+                                        @include('search.articleCard')
+                                    @endif
+                                @endif
+                            @endif
+                        @endforeach
+                    </div>
+                    <div class="text-center">
+                        {{ $articles->links() }}
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>

@@ -55,7 +55,7 @@
                                 <div class="col-md-6">
                                     <select class="form-control" id="grade" name="grade" required>
                                         @foreach( $grades as $grade )
-                                            @if($grade->title == $user->grade or old('grade'))
+                                            @if($grade->title == $user->grade or $grade->title == old('grade'))
                                                 <option value="{{ $grade->title }}" selected>{{ $grade->title }}</option>
                                             @else
                                                 <option value="{{ $grade->title }}">{{ $grade->title }}</option>
@@ -77,7 +77,7 @@
                                 <div class="col-md-6">
                                     <select class="form-control" id="institution_ref" name="institution_ref" required>
                                         @foreach( $institutions as $institution)
-                                            @if($institution->title == $user->institution_ref or old('institution_ref'))
+                                            @if($institution->title == $user->institution_ref or $institution->title == old('institution_ref'))
                                                 <option value="{{ $institution->title }}" selected>{{ $institution->title }}</option>
                                             @else
                                                 <option value="{{ $institution->title }}">{{ $institution->title }}</option>

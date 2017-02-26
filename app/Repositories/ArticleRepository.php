@@ -12,7 +12,7 @@ class ArticleRepository
             ->orWhere('description', 'LIKE', '%'.$string.'%')
             ->orWhere('grade_ref', 'LIKE', '%'.$string.'%')
             ->orWhere('category_ref', 'LIKE', '%'.$string.'%')
-            ->orderBy('created_at', 'des')
+            ->orderBy('created_at', 'desc')
             ->paginate(2);
     }
 }

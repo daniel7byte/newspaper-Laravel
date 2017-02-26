@@ -62,7 +62,7 @@
                                 <div class="col-md-6">
                                     <select class="form-control" id="category_ref" name="category_ref">
                                         @foreach( $categories as $category )
-                                            @if($category->title == $article->category_ref or old('category_ref'))
+                                            @if($category->title == $article->category_ref or $category->title == old('category_ref'))
                                                 <option value="{{ $category->title }}" selected>{{ $category->title }}</option>
                                             @else
                                                 <option value="{{ $category->title }}">{{ $category->title }}</option>
@@ -84,7 +84,7 @@
                                 <div class="col-md-6">
                                     <select class="form-control" id="grade_ref" name="grade_ref">
                                         @foreach( $grades as $grade )
-                                            @if($grade->title == $article->grade_ref or old('grade_ref') or Auth::user()->grade)
+                                            @if($grade->title == $article->grade_ref or $grade->title == old('grade_ref'))
                                                 <option value="{{ $grade->title }}" selected>{{ $grade->title }}</option>
                                             @else
                                                 <option value="{{ $grade->title }}">{{ $grade->title }}</option>
@@ -106,7 +106,7 @@
                                 <div class="col-md-6">
                                     <select class="form-control" id="institution_ref" name="institution_ref">
                                         @foreach( $institutions as $institution )
-                                            @if($institution->title == $article->institution_ref or old('institution_ref') or Auth::user()->institution_ref )
+                                            @if($institution->title == $article->institution_ref or $institution->title == old('institution_ref'))
                                                 <option value="{{ $institution->title }}" selected>{{ $institution->title }}</option>
                                             @else
                                                 <option value="{{ $institution->title }}">{{ $institution->title }}</option>
