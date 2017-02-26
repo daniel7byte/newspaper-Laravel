@@ -43,8 +43,7 @@ class DashboardController extends Controller
         }
         else
         {
-            //$articles = Article::orderBy('created_at', 'desc')->paginate($this->pagination);
-            $articles = Article::orderBy('created_at', 'desc')->get();
+            $articles = Article::orderBy('created_at', 'desc')->paginate($this->pagination);
             return view('dashboard.articlesFormStatus', ['articles' => $articles]);
         }
     }

@@ -19,8 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('error404', 'SearchController@error404')->name('error404');
-
 Route::group(['prefix' => 'search'], function () {
 
     Route::get('/', 'SearchController@articlesByString')->name('searchArticlesByString');

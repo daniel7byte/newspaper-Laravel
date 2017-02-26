@@ -48,6 +48,9 @@
                                 </tbody>
                             </table>
                         </div>
+                        <div class="text-center">
+                            {{ $articles->links() }}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -56,12 +59,6 @@
 @endsection
 
 @section('footer')
-    <script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('#articles').DataTable();
-        });
-    </script>
     <script>
         function changeStatus(id) {
             $.ajax({
