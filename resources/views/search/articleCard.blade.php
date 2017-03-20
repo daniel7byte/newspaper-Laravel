@@ -22,9 +22,12 @@
                         <span class="label label-danger">Inactive</span>
                     @endif
                     <hr>
-                    <p>
-                        <a href="{{ route('articles.edit', ['articles' => $article->id]) }}" class="btn btn-success btn-block" role="button"><span class="fa fa-pencil" aria-hidden="true"></span> Edit</a>
-                    </p>
+                    <div class="btn-group btn-group-justified">
+                        <a href="{{ route('articles.edit', ['articles' => $article->id]) }}" class="btn btn-success"><span class="fa fa-pencil" aria-hidden="true"></span> Edit</a>
+                        
+                        <a href="!#" onclick="event.preventDefault(); document.getElementById('delete-form').submit();" class="btn btn-danger"><i class="fa fa-remove"></i> Delete</a>
+                    </div>
+                    @include('articles.delete')
                 @endif
             @endif
             <div class="clearfix"></div>

@@ -181,8 +181,20 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, Article $article)
     {
-        //
+        if($request->user()->role != "ADMIN"){
+            $this->authorize('owner', $task);
+        }
+        if($article->image != null){
+            $exists = Storage::disk('imagesArticles')->exists($article->image);
+            if($exists){
+                Storage::disk('imagesArticles')->delete($article->image);
+            }
+        }
+        $article->delete();
+        $strFlash = 'Article deleted';
+        $strStatus = 'success';
+        return redirect(route('searchArticlesByUser', ['user' => Auth::user()->id]))->with($strStatus, $strFlash);
     }
 }

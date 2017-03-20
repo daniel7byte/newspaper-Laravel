@@ -11,12 +11,24 @@
                 @include('alerts.success')
                 @include('alerts.warning')
                 <div class="panel panel-default">
-                    <div class="panel-heading">Create new article</div>
+                    <div class="panel-heading">Edit article</div>
 
                     <div class="panel-body">
                         <form class="form-horizontal" role="form" method="POST" action="{{ route('articles.update', ['article' => $article]) }}" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <input name="_method" type="hidden" value="PUT">
+
+                            @if(Auth::user()->role == "ADMIN")
+                                <div class="form-group has-warning">
+                                    <label class="col-md-4 control-label">by</label>
+                                    
+                                    <div class="col-md-6">
+                                        <p class="form-control">{{ $article->user->first_name }} {{ $article->user->last_name }}</p>
+                                    </div>
+                                </div>
+                            @endif
+                            
+                            <hr>
 
                             <div class="form-group">
                                 <label for="image" class="col-md-4 control-label">Image</label>

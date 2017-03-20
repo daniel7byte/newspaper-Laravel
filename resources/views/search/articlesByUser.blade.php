@@ -6,6 +6,7 @@
             <div class="col-md-8 col-md-offset-2">
                 @include('alerts.success')
                 @include('alerts.warning')
+                @include('alerts.danger')
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="media">

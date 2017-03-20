@@ -1,0 +1,1 @@
+{{ Form::open(['route' => ['articles.destroy', $article], 'method' => 'DELETE', 'id' => 'delete-form']) }}{{ Form::close() }}
