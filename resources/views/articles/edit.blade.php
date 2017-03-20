@@ -7,7 +7,7 @@
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-10 col-md-offset-1">
                 @include('alerts.success')
                 @include('alerts.warning')
                 <div class="panel panel-default">
@@ -156,7 +156,20 @@
     <script src="/trumbowyg/langs/es.min.js"></script>
     <script>
         $('textarea').trumbowyg({
-            lang: 'es'
+            lang: 'es',
+            btns: [
+                // ['viewHTML'],
+                ['formatting'],
+                'btnGrp-semantic',
+                // ['superscript', 'subscript'],
+                ['link'],
+                // ['insertImage'],
+                'btnGrp-justify',
+                'btnGrp-lists',
+                ['horizontalRule'],
+                // ['removeformat'],
+                // ['fullscreen']
+            ]
         });
     </script>
 @endsection
