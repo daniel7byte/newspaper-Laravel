@@ -1,7 +1,7 @@
 @extends('../layouts.app')
 
 @section('head')
-    <script src="/ckeditor/ckeditor.js"></script>
+    <link rel="stylesheet" href="/trumbowyg/ui/trumbowyg.min.css">
 @endsection
 
 @section('content')
@@ -152,9 +152,11 @@
 @endsection
 
 @section('footer')
+    <script src="/trumbowyg/trumbowyg.min.js"></script>
+    <script src="/trumbowyg/langs/es.min.js"></script>
     <script>
-        // Replace the <textarea id="description"> with a CKEditor
-        // instance, using default configuration.
-        CKEDITOR.replace( 'description' );
+        $('textarea').trumbowyg({
+            lang: 'es'
+        });
     </script>
 @endsection
