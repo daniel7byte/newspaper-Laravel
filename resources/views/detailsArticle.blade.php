@@ -38,19 +38,6 @@
                                 @endif
                             @endif
                         </div>
-
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="thumbnail">
-                                    <h4>Commentaries</h4>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="text-center">
-
-                        </div>
                     </div>
                 </div>
             </div>

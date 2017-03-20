@@ -75,7 +75,6 @@
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="{{ route('my_account') }}">My Account</a></li>
                                     <li><a href="{{ route('searchArticlesByUser', ['user' => Auth::user()->id]) }}">My Articles</a></li>
-                                    <li><a href="{{ route('internal_comments.create') }}">Internal Comments</a></li>
                                     @if(Auth::user()->role == "ADMIN")
                                         <li><a href="{{ route('articlesFormStatus') }}">Enable/Disable Articles</a></li>
                                     @endif
