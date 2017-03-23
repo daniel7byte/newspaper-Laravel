@@ -1,9 +1,5 @@
 @extends('layouts.app')
 
-@section('head')
-    <link rel="stylesheet" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
-@endsection
-
 @section('content')
     <div class="container-fluid">
         <div class="row">

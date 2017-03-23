@@ -53,6 +53,9 @@ class SearchController extends Controller
     }
 
     public function articlesByString(Request $request){
+        if ($request->q == NULL or $request->q == '') {
+            return redirect()->route('welcome');
+        }
         $articles = $this->articles->byString($request->q);
         return view('search.articlesByString', ['articles' => $articles, 'string' => $request->q]);
     }
