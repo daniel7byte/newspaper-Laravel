@@ -52,6 +52,8 @@ class ArticleController extends Controller
         $article->title = $request->title;
         $article->description = $request->description;
 
+        $article->url_video = $request->url_video;
+
         $article->category_ref = $request->category_ref;
         $article->grade_ref = $request->grade_ref;
         $article->institution_ref = $request->institution_ref;
@@ -137,6 +139,12 @@ class ArticleController extends Controller
 
         $article->title = $request->title;
         $article->description = $request->description;
+
+        if ($request->category_ref == 'Video') {
+            $article->url_video = $request->url_video;
+        }else{
+            $article->url_video = NULL;
+        }
 
         $article->category_ref = $request->category_ref;
         $article->grade_ref = $request->grade_ref;

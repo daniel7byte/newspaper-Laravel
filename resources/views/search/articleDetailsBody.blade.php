@@ -1,6 +1,6 @@
 <div class="col-md-12">
     <div class="thumbnail">
-        <a href="{{ route('detailsArticle', ['article' => $article]) }}">
+        <a target="_blank" href="{{ ($article->url_video == '' ? '#!' : $article->url_video) }}">
             @if($article->image == null)
                 <img src="/img/image404.png" alt="Image 404">
             @else

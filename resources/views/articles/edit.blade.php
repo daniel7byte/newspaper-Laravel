@@ -90,6 +90,20 @@
                                 </div>
                             </div>
 
+                            <div id="url_videoDiv" style="display: none;" class="form-group{{ $errors->has('url_video') ? ' has-error' : '' }}">
+                                <label for="url_video" class="col-md-4 control-label">URL Video</label>
+
+                                <div class="col-md-6">
+                                    <input id="url_video" type="text" class="form-control" name="url_video" value="{{ $article->url_video or old('url_video') }}">
+
+                                    @if ($errors->has('url_video'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('url_video') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
                             <div class="form-group{{ $errors->has('grade_ref') ? ' has-error' : '' }}">
                                 <label for="grade_ref" class="col-md-4 control-label">Grade</label>
 
@@ -164,6 +178,18 @@
 @endsection
 
 @section('footer')
+    <script>
+        if ($( "#category_ref" ).val() == 'Video') {
+            $( "#url_videoDiv" ).show( 'slow' );
+        }
+        $( "#category_ref" ).change(function() {
+            if ($( "#category_ref" ).val() == 'Video') {
+                $( "#url_videoDiv" ).show( 'slow' );
+            } else {
+                $( "#url_videoDiv" ).hide( 'slow' );
+            }
+        });
+    </script>
     <script src="/trumbowyg/trumbowyg.min.js"></script>
     <script src="/trumbowyg/langs/es.min.js"></script>
     <script>

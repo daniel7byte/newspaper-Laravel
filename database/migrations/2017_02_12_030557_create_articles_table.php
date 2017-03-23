@@ -18,6 +18,7 @@ class CreateArticlesTable extends Migration
             $table->string('title');
             $table->text('description')->nullable();
             $table->text('image')->nullable();
+            $table->text('url_video')->nullable();
             $table->date('date')->nullable();
             $table->boolean('active');
             $table->integer('user_id')->index();

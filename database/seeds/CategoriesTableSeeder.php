@@ -12,7 +12,7 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        $titles = ['Anormalidad Academica'];
+        $titles = ['Anormalidad Academica', 'Video', 'Evento'];
 
         foreach ($titles as $key => $value) {
 
