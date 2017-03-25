@@ -12,7 +12,11 @@
                         <div class="media">
                             <div class="media-left">
                                 <a href="#">
-                                    <img class="media-object img-circle img-thumbnail UserAvatar" src="/imagesUsers/{{ $user->image }}" alt="{{ $user->first_name }}">
+                                    @if($user->image == null)
+                                        <img class="img media-object img-circle img-thumbnail UserAvatar" src="/img/image404.png" alt="Image 404">
+                                    @else
+                                        <img class="img media-object img-circle img-thumbnail UserAvatar" src="/imagesUsers/{{ $user->image }}" alt="{{ $user->first_name }}">
+                                    @endif
                                 </a>
                             </div>
                             <div class="media-body">
