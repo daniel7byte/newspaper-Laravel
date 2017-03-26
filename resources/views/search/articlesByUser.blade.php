@@ -9,13 +9,13 @@
                 @include('alerts.danger')
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <div class="media">
+                        <div class="media" style="overflow: visible;">
                             <div class="media-left">
                                 <a href="#">
                                     @if($user->image == null)
-                                        <img class="img media-object img-circle img-thumbnail UserAvatar" src="/img/image404.png" alt="Image 404">
+                                        <img class="img media-object img-circle profile-img-article-list" src="/img/image404.png" alt="Image 404">
                                     @else
-                                        <img class="img media-object img-circle img-thumbnail UserAvatar" src="/imagesUsers/{{ $user->image }}" alt="{{ $user->first_name }}">
+                                        <img class="img media-object img-circle profile-img-article-list" src="/imagesUsers/{{ $user->image }}" alt="{{ $user->first_name }}">
                                     @endif
                                 </a>
                             </div>

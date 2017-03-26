@@ -67,13 +67,13 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
-                            @if(Auth::user()->image == null)
-                                <img class="img img-circle img-thumbnail UserAvatar" src="/img/image404.png" alt="Image 404">
-                            @else
-                                <img class="img img-circle img-thumbnail UserAvatar" src="/imagesUsers/{{ Auth::user()->image }}" alt="{{ Auth::user()->first_name }}">
-                            @endif
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    @if(Auth::user()->image == null)
+                                        <img class="img img-circle profile-img" src="/img/image404.png" alt="Image 404">
+                                    @else
+                                        <img class="img img-circle profile-img" src="/imagesUsers/{{ Auth::user()->image }}" alt="{{ Auth::user()->first_name }}">
+                                    @endif
                                     {{ Auth::user()->first_name }} <span class="caret"></span>
                                 </a>
 
