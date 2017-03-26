@@ -40,6 +40,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
+                        <img class="img logo-img" src="/img/MarcaAgua.png" alt="Image 404">
                         {{ config('app.name', 'Laravel') }}
                     </a>
                 </div>
@@ -55,6 +56,18 @@
                                 @inject('menu', 'App\Http\Controllers\MenuController')
                                 @foreach($menu->categories() as $category)
                                     <li><a href="{{ route('searchArticlesByCategory', ['$category' => $category->title]) }}">{{ $category->title }}</a></li>
+                                @endforeach
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                Institutions <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                @inject('menu', 'App\Http\Controllers\MenuController')
+                                @foreach($menu->Institutions() as $Institution)
+                                    <li><a href="{{ route('searchArticlesByInstitution', ['$Institution' => $Institution->title]) }}">{{ $Institution->title }}</a></li>
                                 @endforeach
                             </ul>
                         </li>

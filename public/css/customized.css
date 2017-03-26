@@ -22,3 +22,32 @@
 	height: 45px;
     width: 45px;
 }
+
+small > a {
+    font-size: 90%;
+    color: #9E9E9E;
+}
+
+.btn-success-invert {
+    color: #18bc9c;
+    background-color: #ffffff;
+    border-color: #18bc9c;
+}
+
+.btn-success-invert:hover {
+    color: #ffffff;
+    background-color: #18bc9c;
+    border-color: #18bc9c;
+}
+
+.logo-img {
+    margin-top: -12px;
+    margin-right: 10px;
+
+    float: left;
+    background: 50% 50% no-repeat;
+    background-size: auto 100%;
+
+    height: 45px;
+    width: auto;
+}

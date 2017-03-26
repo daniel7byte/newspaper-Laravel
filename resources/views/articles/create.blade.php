@@ -181,7 +181,7 @@
         $('textarea').trumbowyg({
             lang: 'es',
             btns: [
-                // ['viewHTML'],
+                ['viewHTML'],
                 ['formatting'],
                 'btnGrp-semantic',
                 // ['superscript', 'subscript'],
@@ -189,7 +189,7 @@
                 // ['insertImage'],
                 'btnGrp-justify',
                 'btnGrp-lists',
-                ['horizontalRule'],
+                // ['horizontalRule'],
                 // ['removeformat'],
                 // ['fullscreen']
             ]
