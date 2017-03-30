@@ -5,9 +5,8 @@
     <style>
         .carousel-inner > .item > img,
         .carousel-inner > .item > a > img {
-            /*width: auto;*/
+            width: 100%;
             margin: auto;
-            height: 329px;
         }
     </style>
 
@@ -38,7 +37,7 @@
                       </div>
 
                       <div class="item">
-                        <img src="/img/slider/Foto Univalle.jpg">
+                        <img src="/img/slider/Argemiro_1.jpg">
                         <div class="carousel-caption">
                             <h3>Argemiro Escobar Cardona</h3>
                             <p>Instalaciones</p>
@@ -46,7 +45,7 @@
                       </div>
                     
                       <div class="item">
-                        <img src="/img/slider/Univalle.jpg">
+                        <img src="/img/slider/Argemiro_2.jpg">
                         <div class="carousel-caption">
                             <h3>Argemiro Escobar Cardona</h3>
                             <p>Instalaciones</p>
@@ -54,7 +53,7 @@
                       </div>
 
                       <div class="item">
-                        <img src="/img/slider/Universidad-Valle3_Carrusel.jpg">
+                        <img src="/img/slider/Argemiro_3.jpg">
                         <div class="carousel-caption">
                             <h3>Argemiro Escobar Cardona</h3>
                             <p>Instalaciones</p>
