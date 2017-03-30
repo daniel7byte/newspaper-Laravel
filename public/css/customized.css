@@ -38,6 +38,11 @@ small > a {
     color: #ffffff;
     background-color: #18bc9c;
     border-color: #18bc9c;
+    /*transition: .5s;*/
+}
+
+.btn:hover, a:hover {
+    transition: .5s;
 }
 
 .logo-img {
