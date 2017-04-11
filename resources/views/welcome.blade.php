@@ -29,7 +29,7 @@
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
                       <div class="item active">
-                        <img src="/img/slider/banner-portafolio-institucional.jpg">
+                        <img src="/img/slider/Argemiro0.png">
                         <div class="carousel-caption">
                             <h3>Argemiro Escobar Cardona</h3>
                             <p>Instalaciones</p>
@@ -37,7 +37,7 @@
                       </div>
 
                       <div class="item">
-                        <img src="/img/slider/Argemiro_1.jpg">
+                        <img src="/img/slider/Argemiro1.png">
                         <div class="carousel-caption">
                             <h3>Argemiro Escobar Cardona</h3>
                             <p>Instalaciones</p>
@@ -45,7 +45,7 @@
                       </div>
                     
                       <div class="item">
-                        <img src="/img/slider/Argemiro_2.jpg">
+                        <img src="/img/slider/Argemiro2.png">
                         <div class="carousel-caption">
                             <h3>Argemiro Escobar Cardona</h3>
                             <p>Instalaciones</p>
@@ -53,7 +53,7 @@
                       </div>
 
                       <div class="item">
-                        <img src="/img/slider/Argemiro_3.jpg">
+                        <img src="/img/slider/Argemiro3.png">
                         <div class="carousel-caption">
                             <h3>Argemiro Escobar Cardona</h3>
                             <p>Instalaciones</p>
